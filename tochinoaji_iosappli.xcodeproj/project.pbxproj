@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D0F9EDEDA0A69104AC24972A /* Pods_tochinoaji_iosappli.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EB6470D0AC1D9C3947CB44 /* Pods_tochinoaji_iosappli.framework */; };
+		DE674DB31D3B92D200DEF56C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE674DB21D3B92D200DEF56C /* AppDelegate.swift */; };
+		DE674DB51D3B92D200DEF56C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE674DB41D3B92D200DEF56C /* ViewController.swift */; };
+		DE674DB81D3B92D200DEF56C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE674DB61D3B92D200DEF56C /* Main.storyboard */; };
+		DE674DBA1D3B92D200DEF56C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE674DB91D3B92D200DEF56C /* Assets.xcassets */; };
+		DE674DBD1D3B92D200DEF56C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE674DBB1D3B92D200DEF56C /* LaunchScreen.storyboard */; };
+		DE674DC81D3B92D300DEF56C /* tochinoaji_iosappliTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE674DC71D3B92D300DEF56C /* tochinoaji_iosappliTests.swift */; };
+		DE674DD31D3B92D300DEF56C /* tochinoaji_iosappliUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE674DD21D3B92D300DEF56C /* tochinoaji_iosappliUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DE674DC41D3B92D300DEF56C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE674DA71D3B92D200DEF56C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE674DAE1D3B92D200DEF56C;
+			remoteInfo = tochinoaji_iosappli;
+		};
+		DE674DCF1D3B92D300DEF56C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE674DA71D3B92D200DEF56C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE674DAE1D3B92D200DEF56C;
+			remoteInfo = tochinoaji_iosappli;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1D26926C02CB73952C8B4080 /* Pods-tochinoaji_iosappli.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tochinoaji_iosappli.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tochinoaji_iosappli/Pods-tochinoaji_iosappli.debug.xcconfig"; sourceTree = "<group>"; };
+		8928682C96C008DB8ED59103 /* Pods-tochinoaji_iosappli.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tochinoaji_iosappli.release.xcconfig"; path = "Pods/Target Support Files/Pods-tochinoaji_iosappli/Pods-tochinoaji_iosappli.release.xcconfig"; sourceTree = "<group>"; };
+		DE674DAF1D3B92D200DEF56C /* tochinoaji_iosappli.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tochinoaji_iosappli.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE674DB21D3B92D200DEF56C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DE674DB41D3B92D200DEF56C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DE674DB71D3B92D200DEF56C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DE674DB91D3B92D200DEF56C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DE674DBC1D3B92D200DEF56C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DE674DBE1D3B92D200DEF56C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE674DC31D3B92D300DEF56C /* tochinoaji_iosappliTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tochinoaji_iosappliTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE674DC71D3B92D300DEF56C /* tochinoaji_iosappliTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tochinoaji_iosappliTests.swift; sourceTree = "<group>"; };
+		DE674DC91D3B92D300DEF56C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE674DCE1D3B92D300DEF56C /* tochinoaji_iosappliUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tochinoaji_iosappliUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE674DD21D3B92D300DEF56C /* tochinoaji_iosappliUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tochinoaji_iosappliUITests.swift; sourceTree = "<group>"; };
+		DE674DD41D3B92D300DEF56C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6EB6470D0AC1D9C3947CB44 /* Pods_tochinoaji_iosappli.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tochinoaji_iosappli.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE674DAC1D3B92D200DEF56C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0F9EDEDA0A69104AC24972A /* Pods_tochinoaji_iosappli.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE674DC01D3B92D300DEF56C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE674DCB1D3B92D300DEF56C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C264F414024BDADB4428CDF7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1D26926C02CB73952C8B4080 /* Pods-tochinoaji_iosappli.debug.xcconfig */,
+				8928682C96C008DB8ED59103 /* Pods-tochinoaji_iosappli.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DE674DA61D3B92D200DEF56C = {
+			isa = PBXGroup;
+			children = (
+				DE674DB11D3B92D200DEF56C /* tochinoaji_iosappli */,
+				DE674DC61D3B92D300DEF56C /* tochinoaji_iosappliTests */,
+				DE674DD11D3B92D300DEF56C /* tochinoaji_iosappliUITests */,
+				DE674DB01D3B92D200DEF56C /* Products */,
+				C264F414024BDADB4428CDF7 /* Pods */,
+				FF58225BC3BDC53CB53F9D9B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DE674DB01D3B92D200DEF56C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE674DAF1D3B92D200DEF56C /* tochinoaji_iosappli.app */,
+				DE674DC31D3B92D300DEF56C /* tochinoaji_iosappliTests.xctest */,
+				DE674DCE1D3B92D300DEF56C /* tochinoaji_iosappliUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE674DB11D3B92D200DEF56C /* tochinoaji_iosappli */ = {
+			isa = PBXGroup;
+			children = (
+				DE674DE21D3B955200DEF56C /* Libs */,
+				DE674DE11D3B954B00DEF56C /* Models */,
+				DE674DE01D3B94ED00DEF56C /* Complonents */,
+				DE674DB21D3B92D200DEF56C /* AppDelegate.swift */,
+				DE674DB41D3B92D200DEF56C /* ViewController.swift */,
+				DE674DB61D3B92D200DEF56C /* Main.storyboard */,
+				DE674DB91D3B92D200DEF56C /* Assets.xcassets */,
+				DE674DBB1D3B92D200DEF56C /* LaunchScreen.storyboard */,
+				DE674DBE1D3B92D200DEF56C /* Info.plist */,
+			);
+			path = tochinoaji_iosappli;
+			sourceTree = "<group>";
+		};
+		DE674DC61D3B92D300DEF56C /* tochinoaji_iosappliTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE674DC71D3B92D300DEF56C /* tochinoaji_iosappliTests.swift */,
+				DE674DC91D3B92D300DEF56C /* Info.plist */,
+			);
+			path = tochinoaji_iosappliTests;
+			sourceTree = "<group>";
+		};
+		DE674DD11D3B92D300DEF56C /* tochinoaji_iosappliUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DE674DD21D3B92D300DEF56C /* tochinoaji_iosappliUITests.swift */,
+				DE674DD41D3B92D300DEF56C /* Info.plist */,
+			);
+			path = tochinoaji_iosappliUITests;
+			sourceTree = "<group>";
+		};
+		DE674DE01D3B94ED00DEF56C /* Complonents */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Complonents;
+			sourceTree = "<group>";
+		};
+		DE674DE11D3B954B00DEF56C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		DE674DE21D3B955200DEF56C /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Libs;
+			sourceTree = "<group>";
+		};
+		FF58225BC3BDC53CB53F9D9B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F6EB6470D0AC1D9C3947CB44 /* Pods_tochinoaji_iosappli.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE674DAE1D3B92D200DEF56C /* tochinoaji_iosappli */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE674DD71D3B92D300DEF56C /* Build configuration list for PBXNativeTarget "tochinoaji_iosappli" */;
+			buildPhases = (
+				3B2A6C1E30CEF6596148862E /* [CP] Check Pods Manifest.lock */,
+				DE674DAB1D3B92D200DEF56C /* Sources */,
+				DE674DAC1D3B92D200DEF56C /* Frameworks */,
+				DE674DAD1D3B92D200DEF56C /* Resources */,
+				51CA7EEB32B2273D9A826BAE /* [CP] Embed Pods Frameworks */,
+				8159BD8D62063EA974C35845 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tochinoaji_iosappli;
+			productName = tochinoaji_iosappli;
+			productReference = DE674DAF1D3B92D200DEF56C /* tochinoaji_iosappli.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DE674DC21D3B92D300DEF56C /* tochinoaji_iosappliTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE674DDA1D3B92D300DEF56C /* Build configuration list for PBXNativeTarget "tochinoaji_iosappliTests" */;
+			buildPhases = (
+				DE674DBF1D3B92D300DEF56C /* Sources */,
+				DE674DC01D3B92D300DEF56C /* Frameworks */,
+				DE674DC11D3B92D300DEF56C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE674DC51D3B92D300DEF56C /* PBXTargetDependency */,
+			);
+			name = tochinoaji_iosappliTests;
+			productName = tochinoaji_iosappliTests;
+			productReference = DE674DC31D3B92D300DEF56C /* tochinoaji_iosappliTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DE674DCD1D3B92D300DEF56C /* tochinoaji_iosappliUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE674DDD1D3B92D300DEF56C /* Build configuration list for PBXNativeTarget "tochinoaji_iosappliUITests" */;
+			buildPhases = (
+				DE674DCA1D3B92D300DEF56C /* Sources */,
+				DE674DCB1D3B92D300DEF56C /* Frameworks */,
+				DE674DCC1D3B92D300DEF56C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE674DD01D3B92D300DEF56C /* PBXTargetDependency */,
+			);
+			name = tochinoaji_iosappliUITests;
+			productName = tochinoaji_iosappliUITests;
+			productReference = DE674DCE1D3B92D300DEF56C /* tochinoaji_iosappliUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE674DA71D3B92D200DEF56C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = just1factory;
+				TargetAttributes = {
+					DE674DAE1D3B92D200DEF56C = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					DE674DC21D3B92D300DEF56C = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = DE674DAE1D3B92D200DEF56C;
+					};
+					DE674DCD1D3B92D300DEF56C = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = DE674DAE1D3B92D200DEF56C;
+					};
+				};
+			};
+			buildConfigurationList = DE674DAA1D3B92D200DEF56C /* Build configuration list for PBXProject "tochinoaji_iosappli" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DE674DA61D3B92D200DEF56C;
+			productRefGroup = DE674DB01D3B92D200DEF56C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE674DAE1D3B92D200DEF56C /* tochinoaji_iosappli */,
+				DE674DC21D3B92D300DEF56C /* tochinoaji_iosappliTests */,
+				DE674DCD1D3B92D300DEF56C /* tochinoaji_iosappliUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE674DAD1D3B92D200DEF56C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE674DBD1D3B92D200DEF56C /* LaunchScreen.storyboard in Resources */,
+				DE674DBA1D3B92D200DEF56C /* Assets.xcassets in Resources */,
+				DE674DB81D3B92D200DEF56C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE674DC11D3B92D300DEF56C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE674DCC1D3B92D300DEF56C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3B2A6C1E30CEF6596148862E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		51CA7EEB32B2273D9A826BAE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tochinoaji_iosappli/Pods-tochinoaji_iosappli-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8159BD8D62063EA974C35845 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tochinoaji_iosappli/Pods-tochinoaji_iosappli-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE674DAB1D3B92D200DEF56C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE674DB51D3B92D200DEF56C /* ViewController.swift in Sources */,
+				DE674DB31D3B92D200DEF56C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE674DBF1D3B92D300DEF56C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE674DC81D3B92D300DEF56C /* tochinoaji_iosappliTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE674DCA1D3B92D300DEF56C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE674DD31D3B92D300DEF56C /* tochinoaji_iosappliUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DE674DC51D3B92D300DEF56C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE674DAE1D3B92D200DEF56C /* tochinoaji_iosappli */;
+			targetProxy = DE674DC41D3B92D300DEF56C /* PBXContainerItemProxy */;
+		};
+		DE674DD01D3B92D300DEF56C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE674DAE1D3B92D200DEF56C /* tochinoaji_iosappli */;
+			targetProxy = DE674DCF1D3B92D300DEF56C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DE674DB61D3B92D200DEF56C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE674DB71D3B92D200DEF56C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DE674DBB1D3B92D200DEF56C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE674DBC1D3B92D200DEF56C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DE674DD51D3B92D300DEF56C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DE674DD61D3B92D300DEF56C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DE674DD81D3B92D300DEF56C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D26926C02CB73952C8B4080 /* Pods-tochinoaji_iosappli.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = tochinoaji_iosappli/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.just1factory.tochinoaji-iosappli";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DE674DD91D3B92D300DEF56C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8928682C96C008DB8ED59103 /* Pods-tochinoaji_iosappli.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = tochinoaji_iosappli/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.just1factory.tochinoaji-iosappli";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DE674DDB1D3B92D300DEF56C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = tochinoaji_iosappliTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.just1factory.tochinoaji-iosappliTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tochinoaji_iosappli.app/tochinoaji_iosappli";
+			};
+			name = Debug;
+		};
+		DE674DDC1D3B92D300DEF56C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = tochinoaji_iosappliTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.just1factory.tochinoaji-iosappliTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tochinoaji_iosappli.app/tochinoaji_iosappli";
+			};
+			name = Release;
+		};
+		DE674DDE1D3B92D300DEF56C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = tochinoaji_iosappliUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.just1factory.tochinoaji-iosappliUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = tochinoaji_iosappli;
+			};
+			name = Debug;
+		};
+		DE674DDF1D3B92D300DEF56C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = tochinoaji_iosappliUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.just1factory.tochinoaji-iosappliUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = tochinoaji_iosappli;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE674DAA1D3B92D200DEF56C /* Build configuration list for PBXProject "tochinoaji_iosappli" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE674DD51D3B92D300DEF56C /* Debug */,
+				DE674DD61D3B92D300DEF56C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE674DD71D3B92D300DEF56C /* Build configuration list for PBXNativeTarget "tochinoaji_iosappli" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE674DD81D3B92D300DEF56C /* Debug */,
+				DE674DD91D3B92D300DEF56C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE674DDA1D3B92D300DEF56C /* Build configuration list for PBXNativeTarget "tochinoaji_iosappliTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE674DDB1D3B92D300DEF56C /* Debug */,
+				DE674DDC1D3B92D300DEF56C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE674DDD1D3B92D300DEF56C /* Build configuration list for PBXNativeTarget "tochinoaji_iosappliUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE674DDE1D3B92D300DEF56C /* Debug */,
+				DE674DDF1D3B92D300DEF56C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DE674DA71D3B92D200DEF56C /* Project object */;
+}

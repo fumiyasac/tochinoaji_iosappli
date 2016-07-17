@@ -1,0 +1,6 @@
+framework module Pods_tochinoaji_iosappli {
+  umbrella header "Pods-tochinoaji_iosappli-umbrella.h"
+
+  export *
+  module * { export * }
+}
