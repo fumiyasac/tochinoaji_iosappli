@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D0F9EDEDA0A69104AC24972A /* Pods_tochinoaji_iosappli.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EB6470D0AC1D9C3947CB44 /* Pods_tochinoaji_iosappli.framework */; };
+		DE2781051D4154EA00C853DF /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2781041D4154E900C853DF /* SideViewController.swift */; };
 		DE674DB31D3B92D200DEF56C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE674DB21D3B92D200DEF56C /* AppDelegate.swift */; };
 		DE674DB51D3B92D200DEF56C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE674DB41D3B92D200DEF56C /* ViewController.swift */; };
 		DE674DB81D3B92D200DEF56C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE674DB61D3B92D200DEF56C /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 		DE674DBD1D3B92D200DEF56C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE674DBB1D3B92D200DEF56C /* LaunchScreen.storyboard */; };
 		DE674DC81D3B92D300DEF56C /* tochinoaji_iosappliTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE674DC71D3B92D300DEF56C /* tochinoaji_iosappliTests.swift */; };
 		DE674DD31D3B92D300DEF56C /* tochinoaji_iosappliUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE674DD21D3B92D300DEF56C /* tochinoaji_iosappliUITests.swift */; };
+		DE674DE51D3D0B7500DEF56C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE674DE41D3D0B7500DEF56C /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,7 @@
 /* Begin PBXFileReference section */
 		1D26926C02CB73952C8B4080 /* Pods-tochinoaji_iosappli.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tochinoaji_iosappli.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tochinoaji_iosappli/Pods-tochinoaji_iosappli.debug.xcconfig"; sourceTree = "<group>"; };
 		8928682C96C008DB8ED59103 /* Pods-tochinoaji_iosappli.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tochinoaji_iosappli.release.xcconfig"; path = "Pods/Target Support Files/Pods-tochinoaji_iosappli/Pods-tochinoaji_iosappli.release.xcconfig"; sourceTree = "<group>"; };
+		DE2781041D4154E900C853DF /* SideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = "<group>"; };
 		DE674DAF1D3B92D200DEF56C /* tochinoaji_iosappli.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tochinoaji_iosappli.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE674DB21D3B92D200DEF56C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE674DB41D3B92D200DEF56C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +53,7 @@
 		DE674DCE1D3B92D300DEF56C /* tochinoaji_iosappliUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tochinoaji_iosappliUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE674DD21D3B92D300DEF56C /* tochinoaji_iosappliUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tochinoaji_iosappliUITests.swift; sourceTree = "<group>"; };
 		DE674DD41D3B92D300DEF56C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE674DE41D3D0B7500DEF56C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F6EB6470D0AC1D9C3947CB44 /* Pods_tochinoaji_iosappli.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tochinoaji_iosappli.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -88,6 +92,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		DE2781031D41406A00C853DF /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
 		DE674DA61D3B92D200DEF56C = {
 			isa = PBXGroup;
 			children = (
@@ -113,10 +124,13 @@
 		DE674DB11D3B92D200DEF56C /* tochinoaji_iosappli */ = {
 			isa = PBXGroup;
 			children = (
+				DE2781031D41406A00C853DF /* Constants */,
 				DE674DE21D3B955200DEF56C /* Libs */,
 				DE674DE11D3B954B00DEF56C /* Models */,
 				DE674DE01D3B94ED00DEF56C /* Complonents */,
 				DE674DB21D3B92D200DEF56C /* AppDelegate.swift */,
+				DE674DE41D3D0B7500DEF56C /* BaseViewController.swift */,
+				DE2781041D4154E900C853DF /* SideViewController.swift */,
 				DE674DB41D3B92D200DEF56C /* ViewController.swift */,
 				DE674DB61D3B92D200DEF56C /* Main.storyboard */,
 				DE674DB91D3B92D200DEF56C /* Assets.xcassets */,
@@ -357,6 +371,8 @@
 			files = (
 				DE674DB51D3B92D200DEF56C /* ViewController.swift in Sources */,
 				DE674DB31D3B92D200DEF56C /* AppDelegate.swift in Sources */,
+				DE674DE51D3D0B7500DEF56C /* BaseViewController.swift in Sources */,
+				DE2781051D4154EA00C853DF /* SideViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
