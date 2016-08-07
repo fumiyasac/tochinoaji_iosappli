@@ -40,8 +40,10 @@ class ViewController: UIViewController {
     }
 
     //メインのページへ遷移するためのアクション
-    @IBAction func displayContentsAction(sender: AnyObject) {
-        performSegueWithIdentifier("displayContentsAction", sender: nil)
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "displayContentsAction" {
+            print("イントロダクションページからメインコンテンツページへ遷移すること")
+        }
     }
 
     //レイアウト処理が完了した際の処理

@@ -30,7 +30,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="UKc-vC-jeV" kind="presentation" id="WRn-Av-1RJ"/>
+                                    <segue destination="UKc-vC-jeV" kind="presentation" identifier="displayContentsAction" id="WRn-Av-1RJ"/>
                                 </connections>
                             </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="sxg-hk-GSG">
@@ -80,7 +80,7 @@
         <!--Base View Controller-->
         <scene sceneID="qBq-df-PMK">
             <objects>
-                <viewController id="Nn2-Oo-g4e" customClass="BaseViewController" customModule="tochinoaji_iosappli" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Nn2-Oo-g4e" customClass="BaseViewController" customModule="tochinoaji_iosappli" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bKO-Bj-250"/>
                         <viewControllerLayoutGuide type="bottom" id="kq1-hE-KXi"/>
@@ -90,11 +90,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" alpha="0.65000000000000002" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQH-Tm-4Sc">
-                                <rect key="frame" x="0.0" y="104" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="sideMenuCloseAction:" destination="Nn2-Oo-g4e" eventType="touchUpInside" id="VKB-LP-H2D"/>
+                                </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qnR-x2-gJ0">
-                                <rect key="frame" x="180" y="52" width="240" height="496"/>
+                                <rect key="frame" x="180" y="0.0" width="240" height="600"/>
                                 <connections>
                                     <segue destination="avb-UL-Fs8" kind="embed" id="Eur-J0-wvX"/>
                                 </connections>
@@ -180,6 +183,9 @@
                                 <state key="normal" title="Menu">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="sideMenuOpenAction:" destination="Nn2-Oo-g4e" eventType="touchUpInside" id="G4j-Ge-qYb"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -224,14 +230,14 @@
                         <viewControllerLayoutGuide type="bottom" id="GvS-NU-ecJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Jx4-j0-SCv">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="496"/>
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q76-Ml-CeO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1493" y="1048"/>
+            <point key="canvasLocation" x="1158" y="1026"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ttU-Ei-ksu">
@@ -249,7 +255,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZHc-mc-E40" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2445" y="-327"/>
+            <point key="canvasLocation" x="1668" y="1026"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="k6A-c0-7KK">
@@ -267,7 +273,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jko-Yq-bNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2445" y="249"/>
+            <point key="canvasLocation" x="2335" y="1026"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="xyP-UI-h4R">
@@ -285,7 +291,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2BW-cA-yRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2445" y="826"/>
+            <point key="canvasLocation" x="3003" y="1026"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="iyl-W8-Hcb">
@@ -303,7 +309,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="52m-nh-dEB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2445" y="1410"/>
+            <point key="canvasLocation" x="3673" y="1026"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tka-Ro-Dww">
@@ -321,7 +327,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5K0-xM-fjN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2445" y="1995"/>
+            <point key="canvasLocation" x="4340" y="1026"/>
         </scene>
     </scenes>
 </document>
