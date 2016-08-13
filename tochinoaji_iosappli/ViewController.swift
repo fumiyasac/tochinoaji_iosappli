@@ -42,6 +42,8 @@ class ViewController: UIViewController {
     //メインのページへ遷移するためのアクション
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "displayContentsAction" {
+
+            //TODO:値を渡す必要がある場合に記述をすること
             print("イントロダクションページからメインコンテンツページへ遷移すること")
         }
     }

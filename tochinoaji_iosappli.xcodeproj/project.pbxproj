@@ -10,6 +10,9 @@
 		D0F9EDEDA0A69104AC24972A /* Pods_tochinoaji_iosappli.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EB6470D0AC1D9C3947CB44 /* Pods_tochinoaji_iosappli.framework */; };
 		DE0AA3A81D5795A30044924B /* ColorConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AA3A71D5795A30044924B /* ColorConverter.swift */; };
 		DE0AA3AA1D5795C60044924B /* ColorDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AA3A91D5795C60044924B /* ColorDefinition.swift */; };
+		DE0AA3AD1D5EEBDF0044924B /* SlideBannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AA3AC1D5EEBDF0044924B /* SlideBannerController.swift */; };
+		DE0AA3B31D5F18820044924B /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AA3B11D5F18820044924B /* SideMenuTableViewCell.swift */; };
+		DE0AA3B41D5F18820044924B /* SideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE0AA3B21D5F18820044924B /* SideMenuTableViewCell.xib */; };
 		DE2781051D4154EA00C853DF /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2781041D4154E900C853DF /* SideViewController.swift */; };
 		DE674DB31D3B92D200DEF56C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE674DB21D3B92D200DEF56C /* AppDelegate.swift */; };
 		DE674DB51D3B92D200DEF56C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE674DB41D3B92D200DEF56C /* ViewController.swift */; };
@@ -43,6 +46,9 @@
 		8928682C96C008DB8ED59103 /* Pods-tochinoaji_iosappli.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tochinoaji_iosappli.release.xcconfig"; path = "Pods/Target Support Files/Pods-tochinoaji_iosappli/Pods-tochinoaji_iosappli.release.xcconfig"; sourceTree = "<group>"; };
 		DE0AA3A71D5795A30044924B /* ColorConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorConverter.swift; sourceTree = "<group>"; };
 		DE0AA3A91D5795C60044924B /* ColorDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorDefinition.swift; sourceTree = "<group>"; };
+		DE0AA3AC1D5EEBDF0044924B /* SlideBannerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideBannerController.swift; sourceTree = "<group>"; };
+		DE0AA3B11D5F18820044924B /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		DE0AA3B21D5F18820044924B /* SideMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuTableViewCell.xib; sourceTree = "<group>"; };
 		DE2781041D4154E900C853DF /* SideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = "<group>"; };
 		DE674DAF1D3B92D200DEF56C /* tochinoaji_iosappli.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tochinoaji_iosappli.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE674DB21D3B92D200DEF56C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +102,39 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		DE0AA3AB1D5EEB9C0044924B /* ContentsControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ContentsControllers;
+			sourceTree = "<group>";
+		};
+		DE0AA3AE1D5EEF970044924B /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				DE0AA3AF1D5EEFAF0044924B /* Cells */,
+				DE2781041D4154E900C853DF /* SideViewController.swift */,
+				DE0AA3AC1D5EEBDF0044924B /* SlideBannerController.swift */,
+			);
+			name = SideMenu;
+			sourceTree = "<group>";
+		};
+		DE0AA3AF1D5EEFAF0044924B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DE0AA3B11D5F18820044924B /* SideMenuTableViewCell.swift */,
+				DE0AA3B21D5F18820044924B /* SideMenuTableViewCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		DE0AA3B01D5EF1180044924B /* DataResources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DataResources;
+			sourceTree = "<group>";
+		};
 		DE2781031D41406A00C853DF /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,13 +168,14 @@
 		DE674DB11D3B92D200DEF56C /* tochinoaji_iosappli */ = {
 			isa = PBXGroup;
 			children = (
+				DE0AA3B01D5EF1180044924B /* DataResources */,
 				DE2781031D41406A00C853DF /* Constants */,
 				DE674DE21D3B955200DEF56C /* Libs */,
 				DE674DE11D3B954B00DEF56C /* Models */,
-				DE674DE01D3B94ED00DEF56C /* Complonents */,
+				DE674DE01D3B94ED00DEF56C /* Components */,
+				DE0AA3AB1D5EEB9C0044924B /* ContentsControllers */,
 				DE674DB21D3B92D200DEF56C /* AppDelegate.swift */,
 				DE674DE41D3D0B7500DEF56C /* BaseViewController.swift */,
-				DE2781041D4154E900C853DF /* SideViewController.swift */,
 				DE674DB41D3B92D200DEF56C /* ViewController.swift */,
 				DE674DB61D3B92D200DEF56C /* Main.storyboard */,
 				DE674DB91D3B92D200DEF56C /* Assets.xcassets */,
@@ -163,11 +203,12 @@
 			path = tochinoaji_iosappliUITests;
 			sourceTree = "<group>";
 		};
-		DE674DE01D3B94ED00DEF56C /* Complonents */ = {
+		DE674DE01D3B94ED00DEF56C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DE0AA3AE1D5EEF970044924B /* SideMenu */,
 			);
-			name = Complonents;
+			name = Components;
 			sourceTree = "<group>";
 		};
 		DE674DE11D3B954B00DEF56C /* Models */ = {
@@ -303,6 +344,7 @@
 				DE674DBD1D3B92D200DEF56C /* LaunchScreen.storyboard in Resources */,
 				DE674DBA1D3B92D200DEF56C /* Assets.xcassets in Resources */,
 				DE674DB81D3B92D200DEF56C /* Main.storyboard in Resources */,
+				DE0AA3B41D5F18820044924B /* SideMenuTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,8 +417,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE0AA3AD1D5EEBDF0044924B /* SlideBannerController.swift in Sources */,
 				DE674DB51D3B92D200DEF56C /* ViewController.swift in Sources */,
 				DE674DB31D3B92D200DEF56C /* AppDelegate.swift in Sources */,
+				DE0AA3B31D5F18820044924B /* SideMenuTableViewCell.swift in Sources */,
 				DE0AA3AA1D5795C60044924B /* ColorDefinition.swift in Sources */,
 				DE0AA3A81D5795A30044924B /* ColorConverter.swift in Sources */,
 				DE674DE51D3D0B7500DEF56C /* BaseViewController.swift in Sources */,

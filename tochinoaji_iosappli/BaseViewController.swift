@@ -62,15 +62,38 @@ class BaseViewController: UIViewController {
     
     //ボタンスクロール時の移動量
     var scrollButtonOffsetX: Int!
-    
+
+    //ナビゲーションコントローラーのアイテム
+    var guideButton: UIBarButtonItem!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //デリゲートの設定
         slideContentsScroll.delegate = self
         mainContentsScroll.delegate = self
-
         navigationController?.delegate = self
 
+        //ナビゲーションコントローラー関連の設定
+        navigationController?.navigationBar.barTintColor = ColorConverter.colorWithHexString(ColorDefinition.Orange.rawValue)
+        navigationController?.navigationBar.tintColor = ColorConverter.colorWithHexString(ColorDefinition.White.rawValue)
+
+        let attrsMainTitle = [
+            NSForegroundColorAttributeName : UIColor.whiteColor(),
+            NSFontAttributeName : UIFont(name: "Georgia-Bold", size: 15)!
+        ]
+        navigationItem.title = "土地の味"
+        navigationController?.navigationBar.titleTextAttributes = attrsMainTitle
+
+        let attrsMainButton = [
+            NSForegroundColorAttributeName : UIColor.whiteColor(),
+            NSFontAttributeName : UIFont(name: "Georgia-Bold", size: 13)!
+        ]
+        guideButton = UIBarButtonItem(title: "使い方", style: .Plain, target: self, action: #selector(BaseViewController.onClickGuideButton(_:)))
+        guideButton.setTitleTextAttributes(attrsMainButton, forState: .Normal)
+        navigationItem.rightBarButtonItem = guideButton
+
+        //スクロールビューを識別するためのタグ情報
         slideContentsScroll.tag = ScrollViewTag.Slide.rawValue
         mainContentsScroll.tag = ScrollViewTag.Contents.rawValue
         
@@ -205,7 +228,7 @@ class BaseViewController: UIViewController {
     }
     
     //コンテンツ用のUIScrollViewの初期化を行う
-    func initScrollViewDefinition() {
+    private func initScrollViewDefinition() {
         
         //（重要）BaseViewControllerの「Adjust Scroll View Insets」のチェックを外しておく
         //タブバーの各プロパティ値を設定する
@@ -237,6 +260,11 @@ class BaseViewController: UIViewController {
         moveToCurrentButtonLabelButtonTapped(page)
         moveFormNowDisplayContentsScrollView(page)
         moveFormNowButtonContentsScrollView(page)
+    }
+
+    //使い方ガイドボタンを押した際のアクション
+    func onClickGuideButton(sender: UIBarButtonItem) {
+        
     }
 
     //ボタン押下でコンテナをスライドさせる
@@ -317,7 +345,6 @@ class BaseViewController: UIViewController {
 }
 
 extension BaseViewController: UINavigationControllerDelegate {
-
     
 }
 
