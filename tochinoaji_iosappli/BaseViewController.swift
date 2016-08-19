@@ -264,7 +264,11 @@ class BaseViewController: UIViewController {
 
     //使い方ガイドボタンを押した際のアクション
     func onClickGuideButton(sender: UIBarButtonItem) {
+
+        performSegueWithIdentifier("guideContentsAction", sender: nil)
         
+        //TODO:値を渡す必要がある場合に記述をすること
+        print("使い方ガイドページへ遷移すること")
     }
 
     //ボタン押下でコンテナをスライドさせる

@@ -6,4 +6,6 @@ target 'tochinoaji_iosappli' do
   pod 'Alamofire',     '~> 3.0'
   pod 'SDWebImage'
   pod 'NCMB',          :git => 'https://github.com/NIFTYCloud-mbaas/ncmb_ios.git'
+  pod 'HMSegmentedControl'
+  pod 'SwiftTask'
 end

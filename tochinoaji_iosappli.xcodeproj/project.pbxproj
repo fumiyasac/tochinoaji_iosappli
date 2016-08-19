@@ -13,7 +13,14 @@
 		DE0AA3AD1D5EEBDF0044924B /* SlideBannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AA3AC1D5EEBDF0044924B /* SlideBannerController.swift */; };
 		DE0AA3B31D5F18820044924B /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AA3B11D5F18820044924B /* SideMenuTableViewCell.swift */; };
 		DE0AA3B41D5F18820044924B /* SideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE0AA3B21D5F18820044924B /* SideMenuTableViewCell.xib */; };
+		DE0AA3B61D61DB250044924B /* StockArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AA3B51D61DB250044924B /* StockArticle.swift */; };
+		DE0AA3B81D61DE5D0044924B /* SideMenuMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AA3B71D61DE5C0044924B /* SideMenuMaker.swift */; };
+		DE0AA3BA1D61DECD0044924B /* GuideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AA3B91D61DECD0044924B /* GuideController.swift */; };
 		DE2781051D4154EA00C853DF /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2781041D4154E900C853DF /* SideViewController.swift */; };
+		DE455BFC1D635D8A009B316E /* APIDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE455BFB1D635D8A009B316E /* APIDefinition.swift */; };
+		DE455BFE1D638644009B316E /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE455BFD1D638644009B316E /* Validation.swift */; };
+		DE455C031D6729EA009B316E /* GuideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE455C011D6729EA009B316E /* GuideTableViewCell.swift */; };
+		DE455C041D6729EA009B316E /* GuideTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE455C021D6729EA009B316E /* GuideTableViewCell.xib */; };
 		DE674DB31D3B92D200DEF56C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE674DB21D3B92D200DEF56C /* AppDelegate.swift */; };
 		DE674DB51D3B92D200DEF56C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE674DB41D3B92D200DEF56C /* ViewController.swift */; };
 		DE674DB81D3B92D200DEF56C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE674DB61D3B92D200DEF56C /* Main.storyboard */; };
@@ -49,7 +56,14 @@
 		DE0AA3AC1D5EEBDF0044924B /* SlideBannerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideBannerController.swift; sourceTree = "<group>"; };
 		DE0AA3B11D5F18820044924B /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		DE0AA3B21D5F18820044924B /* SideMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuTableViewCell.xib; sourceTree = "<group>"; };
+		DE0AA3B51D61DB250044924B /* StockArticle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockArticle.swift; sourceTree = "<group>"; };
+		DE0AA3B71D61DE5C0044924B /* SideMenuMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuMaker.swift; sourceTree = "<group>"; };
+		DE0AA3B91D61DECD0044924B /* GuideController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideController.swift; sourceTree = "<group>"; };
 		DE2781041D4154E900C853DF /* SideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = "<group>"; };
+		DE455BFB1D635D8A009B316E /* APIDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIDefinition.swift; sourceTree = "<group>"; };
+		DE455BFD1D638644009B316E /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		DE455C011D6729EA009B316E /* GuideTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideTableViewCell.swift; sourceTree = "<group>"; };
+		DE455C021D6729EA009B316E /* GuideTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GuideTableViewCell.xib; sourceTree = "<group>"; };
 		DE674DAF1D3B92D200DEF56C /* tochinoaji_iosappli.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tochinoaji_iosappli.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE674DB21D3B92D200DEF56C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE674DB41D3B92D200DEF56C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -131,16 +145,51 @@
 		DE0AA3B01D5EF1180044924B /* DataResources */ = {
 			isa = PBXGroup;
 			children = (
+				DE0AA3BC1D61DF5C0044924B /* text */,
+				DE0AA3BB1D61DF480044924B /* json */,
 			);
 			name = DataResources;
+			sourceTree = "<group>";
+		};
+		DE0AA3BB1D61DF480044924B /* json */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = json;
+			sourceTree = "<group>";
+		};
+		DE0AA3BC1D61DF5C0044924B /* text */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = text;
 			sourceTree = "<group>";
 		};
 		DE2781031D41406A00C853DF /* Constants */ = {
 			isa = PBXGroup;
 			children = (
 				DE0AA3A91D5795C60044924B /* ColorDefinition.swift */,
+				DE0AA3B71D61DE5C0044924B /* SideMenuMaker.swift */,
+				DE455BFB1D635D8A009B316E /* APIDefinition.swift */,
 			);
 			name = Constants;
+			sourceTree = "<group>";
+		};
+		DE455BFF1D6727F4009B316E /* GuidePageContents */ = {
+			isa = PBXGroup;
+			children = (
+				DE455C001D6729BE009B316E /* Cells */,
+			);
+			name = GuidePageContents;
+			sourceTree = "<group>";
+		};
+		DE455C001D6729BE009B316E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DE455C011D6729EA009B316E /* GuideTableViewCell.swift */,
+				DE455C021D6729EA009B316E /* GuideTableViewCell.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		DE674DA61D3B92D200DEF56C = {
@@ -177,6 +226,7 @@
 				DE674DB21D3B92D200DEF56C /* AppDelegate.swift */,
 				DE674DE41D3D0B7500DEF56C /* BaseViewController.swift */,
 				DE674DB41D3B92D200DEF56C /* ViewController.swift */,
+				DE0AA3B91D61DECD0044924B /* GuideController.swift */,
 				DE674DB61D3B92D200DEF56C /* Main.storyboard */,
 				DE674DB91D3B92D200DEF56C /* Assets.xcassets */,
 				DE674DBB1D3B92D200DEF56C /* LaunchScreen.storyboard */,
@@ -206,6 +256,7 @@
 		DE674DE01D3B94ED00DEF56C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DE455BFF1D6727F4009B316E /* GuidePageContents */,
 				DE0AA3AE1D5EEF970044924B /* SideMenu */,
 			);
 			name = Components;
@@ -214,6 +265,7 @@
 		DE674DE11D3B954B00DEF56C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DE0AA3B51D61DB250044924B /* StockArticle.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -222,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				DE0AA3A71D5795A30044924B /* ColorConverter.swift */,
+				DE455BFD1D638644009B316E /* Validation.swift */,
 			);
 			name = Libs;
 			sourceTree = "<group>";
@@ -345,6 +398,7 @@
 				DE674DBA1D3B92D200DEF56C /* Assets.xcassets in Resources */,
 				DE674DB81D3B92D200DEF56C /* Main.storyboard in Resources */,
 				DE0AA3B41D5F18820044924B /* SideMenuTableViewCell.xib in Resources */,
+				DE455C041D6729EA009B316E /* GuideTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,8 +473,14 @@
 			files = (
 				DE0AA3AD1D5EEBDF0044924B /* SlideBannerController.swift in Sources */,
 				DE674DB51D3B92D200DEF56C /* ViewController.swift in Sources */,
+				DE0AA3B81D61DE5D0044924B /* SideMenuMaker.swift in Sources */,
 				DE674DB31D3B92D200DEF56C /* AppDelegate.swift in Sources */,
+				DE455BFE1D638644009B316E /* Validation.swift in Sources */,
+				DE0AA3BA1D61DECD0044924B /* GuideController.swift in Sources */,
+				DE455BFC1D635D8A009B316E /* APIDefinition.swift in Sources */,
 				DE0AA3B31D5F18820044924B /* SideMenuTableViewCell.swift in Sources */,
+				DE455C031D6729EA009B316E /* GuideTableViewCell.swift in Sources */,
+				DE0AA3B61D61DB250044924B /* StockArticle.swift in Sources */,
 				DE0AA3AA1D5795C60044924B /* ColorDefinition.swift in Sources */,
 				DE0AA3A81D5795A30044924B /* ColorConverter.swift in Sources */,
 				DE674DE51D3D0B7500DEF56C /* BaseViewController.swift in Sources */,

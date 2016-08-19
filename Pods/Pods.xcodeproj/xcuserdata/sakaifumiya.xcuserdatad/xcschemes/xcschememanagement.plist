@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>HMSegmentedControl.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>NCMB.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -39,6 +44,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftTask.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,7 +57,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>22096F708BD087C45394A05152523A88</key>
+		<key>0A3EF36E31CF9A924FE5B33E2BB386D0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1294713579D91F7979F9BA70F1536476</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>403C31C07300F1273024ECF43EFFF1ED</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>41B157979398A7275A532A0CDA42340D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6CF84C496FAD90B32E095259609BB528</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>71C1DF39EE1271EA1147F993CA1439A0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,7 +92,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A6BFA8B0C42FC6DF5908F7285895DD5C</key>
+		<key>8B3A7937193774482394CB4E81AEC909</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,22 +102,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CED0FA3C756E8EA075CAC8D6714AAF3C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D41CDB127894BF999DE14805A8BD5A01</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D5E938E61A6AD1A652384FFC7E20E32C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D7FB7A2B0125670E6FCE725B690A8201</key>
+		<key>C41DBB1C0BB7C1FC70C0C7D48973A551</key>
 		<dict>
 			<key>primary</key>
 			<true/>

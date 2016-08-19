@@ -14,9 +14,9 @@ class SideViewController: UIViewController {
     @IBOutlet weak var newinfoContentsButton: UIButton!
     @IBOutlet weak var menuTableView: UITableView!
     
-    let sectionCount = 1
-    let cellCount = 7
-    let cellHeight = 64.5
+    private let sectionCount = 1
+    private let cellCount = SideMenuMaker.makeMenuList().count
+    private let cellHeight = 64.5
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +59,12 @@ extension SideViewController: UITableViewDataSource {
     //表示するセルの中身を設定する ※必須
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("SideMenuTableViewCell") as? SideMenuTableViewCell
+        
+        let sideMenu = SideMenuMaker.makeMenuList()[indexPath.row]
+
+        cell!.categoryLabel.text = sideMenu[0]
+        cell!.menuTextLabel.text = sideMenu[1]
+
         cell!.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         cell!.selectionStyle = UITableViewCellSelectionStyle.None
         

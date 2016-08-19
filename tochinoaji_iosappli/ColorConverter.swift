@@ -17,11 +17,11 @@ struct ColorConverter {
         var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).uppercaseString
         
         //#があれば取り除く
-        if (cString.hasPrefix("#")) {
+        if cString.hasPrefix("#") {
             cString = (cString as NSString).substringFromIndex(1)
         }
         
-        if (cString.characters.count != 6) {
+        if cString.characters.count != 6 {
             return UIColor.grayColor()
         }
         

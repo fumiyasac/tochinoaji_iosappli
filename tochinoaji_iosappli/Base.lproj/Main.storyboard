@@ -34,7 +34,7 @@
                                     <segue destination="UKc-vC-jeV" kind="presentation" identifier="displayContentsAction" id="WRn-Av-1RJ"/>
                                 </connections>
                             </button>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="sxg-hk-GSG">
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="sxg-hk-GSG">
                                 <rect key="frame" x="265" y="510" width="71" height="37"/>
                                 <color key="currentPageIndicatorTintColor" red="1" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
@@ -216,11 +216,46 @@
                         <outlet property="sideMenuControlButton" destination="SHZ-up-E0y" id="cIB-0N-TVU"/>
                         <outlet property="slideContentsScroll" destination="LOp-LG-4bo" id="a91-AR-Bek"/>
                         <outlet property="thirdContents" destination="aBJ-ic-kR6" id="cnJ-cv-UCm"/>
+                        <segue destination="gnO-ZK-yNr" kind="show" identifier="guideContentsAction" id="mbZ-o5-lLS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Rv-6H-arJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1668" y="301"/>
+        </scene>
+        <!--Guide Controller-->
+        <scene sceneID="ids-V1-FQb">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="gnO-ZK-yNr" customClass="GuideController" customModule="tochinoaji_iosappli" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ClY-ZT-WIw"/>
+                        <viewControllerLayoutGuide type="bottom" id="08n-UR-h56"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="btO-bT-8w4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0tl-49-wkk">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0tl-49-wkk" firstAttribute="top" secondItem="ClY-ZT-WIw" secondAttribute="bottom" id="IyJ-LN-bVt"/>
+                            <constraint firstAttribute="trailing" secondItem="0tl-49-wkk" secondAttribute="trailing" id="ajb-mH-VuX"/>
+                            <constraint firstItem="08n-UR-h56" firstAttribute="top" secondItem="0tl-49-wkk" secondAttribute="bottom" id="omn-gd-Efh"/>
+                            <constraint firstItem="0tl-49-wkk" firstAttribute="leading" secondItem="btO-bT-8w4" secondAttribute="leading" id="uJ7-hg-g9x"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="guideContentsTableView" destination="0tl-49-wkk" id="Reu-MF-EYP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gmY-7b-P29" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2355" y="301"/>
         </scene>
         <!--Side View Controller-->
         <scene sceneID="Sft-X4-rov">
@@ -417,6 +452,10 @@
         <scene sceneID="bbM-s1-RDI">
             <objects>
                 <viewController id="819-dH-znG" customClass="SlideBannerController" customModule="tochinoaji_iosappli" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ceE-PI-0cb"/>
+                        <viewControllerLayoutGuide type="bottom" id="7q5-7t-PoC"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="trT-cZ-eVu">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
