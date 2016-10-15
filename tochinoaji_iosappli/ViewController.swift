@@ -15,10 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var introductionPageControl: UIPageControl!
 
     //スライドの枚数
-    private let pageNumber = 5
-
-    //Container生成用のトークン値
-    private var introScrollToken: dispatch_once_t = 0
+    fileprivate let pageNumber = 5
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +24,12 @@ class ViewController: UIViewController {
     }
 
     //コンテンツ用のUIScrollViewの初期化を行う
-    private func initMainScrollViewDefinition() {
+    fileprivate func initMainScrollViewDefinition() {
         
         //ScrollViewの各種プロパティ値を設定する
-        introductionScrollView.pagingEnabled = true
-        introductionScrollView.scrollEnabled = true
-        introductionScrollView.directionalLockEnabled = false
+        introductionScrollView.isPagingEnabled = true
+        introductionScrollView.isScrollEnabled = true
+        introductionScrollView.isDirectionalLockEnabled = false
         introductionScrollView.showsHorizontalScrollIndicator = false
         introductionScrollView.showsVerticalScrollIndicator = false
         introductionScrollView.bounces = false
@@ -40,7 +37,7 @@ class ViewController: UIViewController {
     }
 
     //メインのページへ遷移するためのアクション
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "displayContentsAction" {
 
             //TODO:値を渡す必要がある場合に記述をすること
@@ -52,33 +49,29 @@ class ViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        //動的に配置する見た目要素は一度だけ実行する
-        dispatch_once(&introScrollToken) { () -> Void in
+        //コンテンツ用のScrollViewを初期化
+        initMainScrollViewDefinition()
             
-            //コンテンツ用のScrollViewを初期化
-            self.initMainScrollViewDefinition()
-
-            //スクロールビュー内のサイズを決定する
-            self.introductionScrollView.contentSize = CGSizeMake(
-                CGFloat(Int(self.introductionScrollView.frame.width) * self.pageNumber),
-                self.introductionScrollView.frame.height
-            )
+        //スクロールビュー内のサイズを決定する
+        introductionScrollView.contentSize = CGSize(
+            width: CGFloat(Int(introductionScrollView.frame.width) * pageNumber),
+            height: introductionScrollView.frame.height
+        )
             
-            //mainScrollViewの中に画像を一列に並べて配置する
-            for i in 0...(self.pageNumber - 1) {
+        //mainScrollViewの中に画像を一列に並べて配置する
+        for i in 0...(pageNumber - 1) {
                 
-                let targetImageView = UIImageView(
-                    frame: CGRect(
-                        x: Int(self.introductionScrollView.frame.width) * i,
-                        y: 0,
-                        width: Int(self.introductionScrollView.frame.width),
-                        height: Int(self.introductionScrollView.frame.height)
-                    )
+            let targetImageView = UIImageView(
+                frame: CGRect(
+                    x: Int(introductionScrollView.frame.width) * i,
+                    y: 0,
+                    width: Int(introductionScrollView.frame.width),
+                    height: Int(introductionScrollView.frame.height)
                 )
-                self.introductionScrollView.addSubview(targetImageView)
-            }
-            
-        }
+            )
+            introductionScrollView.addSubview(targetImageView)
+         }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -90,7 +83,7 @@ class ViewController: UIViewController {
 extension ViewController: UIScrollViewDelegate {
     
     //スクロールが発生した際に行われる処理
-    func scrollViewDidScroll(scrollview: UIScrollView) {
+    func scrollViewDidScroll(_ scrollview: UIScrollView) {
         
         //現在表示されているページ番号を判別する
         let pageWidth = introductionScrollView.frame.width

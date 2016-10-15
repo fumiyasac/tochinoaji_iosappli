@@ -22,8 +22,8 @@ class GuideController: UIViewController {
 
     @IBOutlet weak var guideContentsTableView: UITableView!
 
-    private let sectionCount = 1
-    private let cellCount = GuideSetting.pageHeaderList.count
+    fileprivate let sectionCount = 1
+    fileprivate let cellCount = GuideSetting.pageHeaderList.count
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,7 @@ class GuideController: UIViewController {
 
         //Xibのクラスを読み込む宣言を行う
         let nibDefault:UINib = UINib(nibName: "GuideTableViewCell", bundle: nil)
-        guideContentsTableView.registerNib(nibDefault, forCellReuseIdentifier: "GuideTableViewCell")
+        guideContentsTableView.register(nibDefault, forCellReuseIdentifier: "GuideTableViewCell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,22 +49,22 @@ extension GuideController: UITableViewDelegate {
 extension GuideController: UITableViewDataSource {
     
     //テーブルの要素数を設定する ※必須
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return sectionCount
     }
     
     //テーブルの行数を設定する ※必須
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellCount
     }
     
     //表示するセルの中身を設定する ※必須
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("GuideTableViewCell") as? GuideTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GuideTableViewCell") as? GuideTableViewCell
         
         //TODO: 読み込む静的なコンテンツの策定と
-        cell!.accessoryType = UITableViewCellAccessoryType.None
-        cell!.selectionStyle = UITableViewCellSelectionStyle.None
+        cell!.accessoryType = UITableViewCellAccessoryType.none
+        cell!.selectionStyle = UITableViewCellSelectionStyle.none
         
         return cell!
     }

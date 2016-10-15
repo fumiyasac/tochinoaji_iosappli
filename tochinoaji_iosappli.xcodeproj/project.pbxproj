@@ -358,13 +358,18 @@
 				TargetAttributes = {
 					DE674DAE1D3B92D200DEF56C = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = S5BF5553KY;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Manual;
 					};
 					DE674DC21D3B92D300DEF56C = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = DE674DAE1D3B92D200DEF56C;
 					};
 					DE674DCD1D3B92D300DEF56C = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = DE674DAE1D3B92D200DEF56C;
 					};
 				};
@@ -431,7 +436,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		51CA7EEB32B2273D9A826BAE /* [CP] Embed Pods Frameworks */ = {
@@ -627,10 +632,14 @@
 			baseConfigurationReference = 1D26926C02CB73952C8B4080 /* Pods-tochinoaji_iosappli.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = S5BF5553KY;
 				INFOPLIST_FILE = tochinoaji_iosappli/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.just1factory.tochinoaji-iosappli";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "52d389ea-cad8-42bd-9d46-047338c5d9f4";
+				PROVISIONING_PROFILE_SPECIFIER = fumiyasac_ios_development;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -639,10 +648,15 @@
 			baseConfigurationReference = 8928682C96C008DB8ED59103 /* Pods-tochinoaji_iosappli.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = S5BF5553KY;
 				INFOPLIST_FILE = tochinoaji_iosappli/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.just1factory.tochinoaji-iosappli";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "11dff38f-1378-4e00-98ff-c59ed5f0447f";
+				PROVISIONING_PROFILE_SPECIFIER = "XC: net.just1factory.*";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -654,6 +668,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.just1factory.tochinoaji-iosappliTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tochinoaji_iosappli.app/tochinoaji_iosappli";
 			};
 			name = Debug;
@@ -666,6 +681,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.just1factory.tochinoaji-iosappliTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tochinoaji_iosappli.app/tochinoaji_iosappli";
 			};
 			name = Release;
@@ -677,6 +693,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.just1factory.tochinoaji-iosappliUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = tochinoaji_iosappli;
 			};
 			name = Debug;
@@ -688,6 +705,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.just1factory.tochinoaji-iosappliUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = tochinoaji_iosappli;
 			};
 			name = Release;

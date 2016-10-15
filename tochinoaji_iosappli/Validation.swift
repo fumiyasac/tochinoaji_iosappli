@@ -11,7 +11,7 @@ import UIKit
 struct Validation {
     
     //文字列の存在チェック
-    static func checkExistenceString(checkString: String) -> Bool {
+    static func checkExistenceString(_ checkString: String) -> Bool {
         
         if checkString.isEmpty {
             return false
@@ -22,7 +22,7 @@ struct Validation {
     }
     
     //数字チェック
-    static func checkNumeric(checkString: String) -> Bool {
+    static func checkNumeric(_ checkString: String) -> Bool {
         
         let targetNumeric: Int? = Int(checkString)
         

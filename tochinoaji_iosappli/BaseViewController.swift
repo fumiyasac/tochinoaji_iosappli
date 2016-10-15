@@ -9,13 +9,13 @@
 import UIKit
 
 enum SideStatus {
-    case Opened
-    case Closed
+    case opened
+    case closed
 }
 
 enum ScrollViewTag: Int {
-    case Slide
-    case Contents
+    case slide
+    case contents
 }
 
 struct ContentsSetting {
@@ -49,9 +49,9 @@ class BaseViewController: UIViewController {
     @IBOutlet weak var slideContentsScroll: UIScrollView!
     @IBOutlet weak var mainContentsScroll: UIScrollView!
 
-    private var status = SideStatus.Closed
-    private var contentsScrollToken: dispatch_once_t = 0
-    private var movingLabel: UILabel!
+    fileprivate var status = SideStatus.closed
+    fileprivate var contentsScrollToken: Int = 0
+    fileprivate var movingLabel: UILabel!
     
     //各コンテンツ表示用のコンテナビュー
     @IBOutlet weak var firstContents: UIView!
@@ -65,7 +65,11 @@ class BaseViewController: UIViewController {
 
     //ナビゲーションコントローラーのアイテム
     var guideButton: UIBarButtonItem!
+    var searchButton: UIBarButtonItem!
 
+    //コンテンツ生成用のフラグ値
+    fileprivate var layoutOnceFlag: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -75,27 +79,32 @@ class BaseViewController: UIViewController {
         navigationController?.delegate = self
 
         //ナビゲーションコントローラー関連の設定
-        navigationController?.navigationBar.barTintColor = ColorConverter.colorWithHexString(ColorDefinition.Orange.rawValue)
-        navigationController?.navigationBar.tintColor = ColorConverter.colorWithHexString(ColorDefinition.White.rawValue)
+        navigationController?.navigationBar.barTintColor = ColorConverter.colorWithHexString(hex: ColorDefinition.Orange.rawValue)
+        navigationController?.navigationBar.tintColor = ColorConverter.colorWithHexString(hex: ColorDefinition.White.rawValue)
 
         let attrsMainTitle = [
-            NSForegroundColorAttributeName : UIColor.whiteColor(),
+            NSForegroundColorAttributeName : UIColor.white,
             NSFontAttributeName : UIFont(name: "Georgia-Bold", size: 15)!
         ]
         navigationItem.title = "土地の味"
         navigationController?.navigationBar.titleTextAttributes = attrsMainTitle
 
         let attrsMainButton = [
-            NSForegroundColorAttributeName : UIColor.whiteColor(),
+            NSForegroundColorAttributeName : UIColor.white,
             NSFontAttributeName : UIFont(name: "Georgia-Bold", size: 13)!
         ]
-        guideButton = UIBarButtonItem(title: "使い方", style: .Plain, target: self, action: #selector(BaseViewController.onClickGuideButton(_:)))
-        guideButton.setTitleTextAttributes(attrsMainButton, forState: .Normal)
-        navigationItem.rightBarButtonItem = guideButton
+        guideButton = UIBarButtonItem(title: "使い方", style: .plain, target: self, action: #selector(BaseViewController.onClickGuideButton(_:)))
+        searchButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.search, target: self, action: #selector(BaseViewController.onClickSearchButton(_:)))
+        
+        guideButton.setTitleTextAttributes(attrsMainButton, for: UIControlState())
+        searchButton.setTitleTextAttributes(attrsMainButton, for: UIControlState())
 
+        let rightItemButtonArray: NSArray = [guideButton, searchButton]
+        navigationItem.setRightBarButtonItems(rightItemButtonArray as? [UIBarButtonItem], animated: false)
+        
         //スクロールビューを識別するためのタグ情報
-        slideContentsScroll.tag = ScrollViewTag.Slide.rawValue
-        mainContentsScroll.tag = ScrollViewTag.Contents.rawValue
+        slideContentsScroll.tag = ScrollViewTag.slide.rawValue
+        mainContentsScroll.tag = ScrollViewTag.contents.rawValue
         
         //動くラベルの初期化
         movingLabel = UILabel()
@@ -106,15 +115,15 @@ class BaseViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         //動的に配置する見た目要素は一度だけ実行する
-        dispatch_once(&contentsScrollToken) { () -> Void in
-            
-            //コンテンツ用のScrollViewを初期化
-            self.initScrollViewDefinition()
+        if layoutOnceFlag == false {
 
+            //コンテンツ用のScrollViewを初期化
+            initScrollViewDefinition()
+            
             //スクロールビュー内のサイズを決定する
-            self.slideContentsScroll.contentSize = CGSizeMake(
-                CGFloat(Int(self.slideContentsScroll.frame.width) / 3 * ContentsSetting.pageNaviList.count),
-                self.slideContentsScroll.frame.height
+            slideContentsScroll.contentSize = CGSize(
+                width: CGFloat(Int(slideContentsScroll.frame.width) / 3 * ContentsSetting.pageNaviList.count),
+                height: slideContentsScroll.frame.height
             )
             
             //メインのスクロールビューの中にコンテンツ表示用のコンテナを一列に並べて配置する
@@ -122,87 +131,87 @@ class BaseViewController: UIViewController {
                 
                 //メニュー用のスクロールビューにボタンを配置
                 let buttonElement: UIButton! = UIButton()
-                self.slideContentsScroll.addSubview(buttonElement)
+                slideContentsScroll.addSubview(buttonElement)
                 
-                buttonElement.frame = CGRectMake(
-                    CGFloat(Int(self.slideContentsScroll.frame.width) / 3 * i),
-                    CGFloat(0),
-                    CGFloat(Int(self.slideContentsScroll.frame.width) / 3),
-                    self.slideContentsScroll.frame.height
+                buttonElement.frame = CGRect(
+                    x: CGFloat(Int(slideContentsScroll.frame.width) / 3 * i),
+                    y: CGFloat(0),
+                    width: CGFloat(Int(slideContentsScroll.frame.width) / 3),
+                    height: slideContentsScroll.frame.height
                 )
-                buttonElement.backgroundColor = UIColor.clearColor()
-                buttonElement.setTitle(ContentsSetting.pageNaviList[i], forState: .Normal)
+                buttonElement.backgroundColor = UIColor.clear
+                buttonElement.setTitle(ContentsSetting.pageNaviList[i], for: UIControlState())
                 buttonElement.titleLabel!.font = UIFont(name: "Georgia-Bold", size: 11)!
                 buttonElement.tag = i
-                buttonElement.addTarget(self, action: #selector(BaseViewController.buttonTapped(_:)), forControlEvents: .TouchUpInside)
+                buttonElement.addTarget(self, action: #selector(BaseViewController.buttonTapped(_:)), for: .touchUpInside)
                 
             }
-
+            
             //動くラベルの配置
-            self.slideContentsScroll.addSubview(self.movingLabel)
-            self.slideContentsScroll.bringSubviewToFront(self.movingLabel)
-            self.movingLabel.frame = CGRectMake(
-                CGFloat(0),
-                CGFloat(SlideMenuSetting.movingLabelY),
-                CGFloat(self.view.frame.width / 3),
-                CGFloat(SlideMenuSetting.movingLabelH)
+            slideContentsScroll.addSubview(self.movingLabel)
+            slideContentsScroll.bringSubview(toFront: self.movingLabel)
+            movingLabel.frame = CGRect(
+                x: CGFloat(0),
+                y: CGFloat(SlideMenuSetting.movingLabelY),
+                width: CGFloat(self.view.frame.width / 3),
+                height: CGFloat(SlideMenuSetting.movingLabelH)
             )
-            self.movingLabel.backgroundColor = UIColor.whiteColor()
+            movingLabel.backgroundColor = UIColor.white
             
             //サイドメニュー用のコンテナ関連のものを配置
-            self.sideMenuCloseButton.frame = CGRectMake(
-                CGFloat(0),
-                CGFloat(0),
-                self.view.frame.width,
-                self.view.frame.height
+            sideMenuCloseButton.frame = CGRect(
+                x: CGFloat(0),
+                y: CGFloat(0),
+                width: self.view.frame.width,
+                height: self.view.frame.height
             )
-            self.sideMenuCloseButton.enabled = false
-            self.sideMenuCloseButton.alpha = 0
-
-            self.sideMenuContainer.frame = CGRectMake(
-                CGFloat(SideMenuSetting.closedContainerX),
-                CGFloat(0),
-                CGFloat(SideMenuSetting.targetContainerW),
-                self.view.frame.height
+            sideMenuCloseButton.isEnabled = false
+            sideMenuCloseButton.alpha = 0
+            
+            sideMenuContainer.frame = CGRect(
+                x: CGFloat(SideMenuSetting.closedContainerX),
+                y: CGFloat(0),
+                width: CGFloat(SideMenuSetting.targetContainerW),
+                height: self.view.frame.height
             )
-            self.navigationController?.view.addSubview(self.sideMenuCloseButton)
-            self.navigationController?.view.addSubview(self.sideMenuContainer)
+            navigationController?.view.addSubview(sideMenuCloseButton)
+            navigationController?.view.addSubview(sideMenuContainer)
             
             //メニューボタンの装飾
-            self.sideMenuControlButton.layer.borderColor = ColorConverter.colorWithHexString(ColorDefinition.White.rawValue).CGColor
-            self.sideMenuControlButton.layer.borderWidth = 2
-            self.sideMenuControlButton.layer.cornerRadius = CGFloat(SideMenuSetting.sideMenuControlButtonRadius)
+            sideMenuControlButton.layer.borderColor = ColorConverter.colorWithHexString(hex: ColorDefinition.White.rawValue).cgColor
+            sideMenuControlButton.layer.borderWidth = 2
+            sideMenuControlButton.layer.cornerRadius = CGFloat(SideMenuSetting.sideMenuControlButtonRadius)
         }
+        
     }
 
     //サイドメニューを開いた状態にするアクション
-    @IBAction func sideMenuOpenAction(sender: AnyObject) {
-        status = SideStatus.Opened
+    @IBAction func sideMenuOpenAction(_ sender: AnyObject) {
+        status = SideStatus.opened
         changeSideMenuStatus(status)
     }
 
     //サイドメニューを閉じた状態にするアクション
-    @IBAction func sideMenuCloseAction(sender: AnyObject) {
-        status = SideStatus.Closed
+    @IBAction func sideMenuCloseAction(_ sender: AnyObject) {
+        status = SideStatus.closed
         changeSideMenuStatus(status)
     }
     
     //サイドメニュー制御用のメソッド
-    func changeSideMenuStatus(targetStatus: SideStatus) {
+    func changeSideMenuStatus(_ targetStatus: SideStatus) {
 
-        if targetStatus == SideStatus.Opened {
+        if targetStatus == SideStatus.opened {
             
             //サイドメニューを表示状態にする
-            UIView.animateWithDuration(0.16, delay: 0, options: [], animations: {
+            UIView.animate(withDuration: 0.16, delay: 0, options: [], animations: {
 
-                self.sideMenuCloseButton.enabled = true
+                self.sideMenuCloseButton.isEnabled = true
                 self.sideMenuCloseButton.alpha = 0.6
-
-                self.sideMenuContainer.frame = CGRectMake(
-                    CGFloat(SideMenuSetting.openedContainerX),
-                    CGFloat(0),
-                    CGFloat(SideMenuSetting.targetContainerW),
-                    self.view.frame.height
+                self.sideMenuContainer.frame = CGRect(
+                    x: CGFloat(SideMenuSetting.openedContainerX),
+                    y: CGFloat(0),
+                    width: CGFloat(SideMenuSetting.targetContainerW),
+                    height: self.view.frame.height
                 )
 
             }, completion: nil)
@@ -210,16 +219,15 @@ class BaseViewController: UIViewController {
         } else {
 
             //サイドメニューを非表示状態にする
-            UIView.animateWithDuration(0.16, delay: 0, options: [], animations: {
+            UIView.animate(withDuration: 0.16, delay: 0, options: [], animations: {
 
-                self.sideMenuCloseButton.enabled = false
+                self.sideMenuCloseButton.isEnabled = false
                 self.sideMenuCloseButton.alpha = 0
-
-                self.sideMenuContainer.frame = CGRectMake(
-                    CGFloat(SideMenuSetting.closedContainerX),
-                    CGFloat(0),
-                    CGFloat(SideMenuSetting.targetContainerW),
-                    self.view.frame.height
+                self.sideMenuContainer.frame = CGRect(
+                    x: CGFloat(SideMenuSetting.closedContainerX),
+                    y: CGFloat(0),
+                    width: CGFloat(SideMenuSetting.targetContainerW),
+                    height: self.view.frame.height
                 )
 
             }, completion: nil)
@@ -228,22 +236,22 @@ class BaseViewController: UIViewController {
     }
     
     //コンテンツ用のUIScrollViewの初期化を行う
-    private func initScrollViewDefinition() {
+    fileprivate func initScrollViewDefinition() {
         
         //（重要）BaseViewControllerの「Adjust Scroll View Insets」のチェックを外しておく
         //タブバーの各プロパティ値を設定する
-        slideContentsScroll.pagingEnabled = false
-        slideContentsScroll.scrollEnabled = true
-        slideContentsScroll.directionalLockEnabled = false
+        slideContentsScroll.isPagingEnabled = false
+        slideContentsScroll.isScrollEnabled = true
+        slideContentsScroll.isDirectionalLockEnabled = false
         slideContentsScroll.showsHorizontalScrollIndicator = false
         slideContentsScroll.showsVerticalScrollIndicator = false
         slideContentsScroll.bounces = false
         slideContentsScroll.scrollsToTop = false
 
         //コンテンツ部分の各プロパティ値を設定する
-        mainContentsScroll.pagingEnabled = true
-        mainContentsScroll.scrollEnabled = true
-        mainContentsScroll.directionalLockEnabled = false
+        mainContentsScroll.isPagingEnabled = true
+        mainContentsScroll.isScrollEnabled = true
+        mainContentsScroll.isDirectionalLockEnabled = false
         mainContentsScroll.showsHorizontalScrollIndicator = true
         mainContentsScroll.showsVerticalScrollIndicator = false
         mainContentsScroll.bounces = false
@@ -251,7 +259,7 @@ class BaseViewController: UIViewController {
     }
     
     //ボタンをタップした際に行われる処理
-    func buttonTapped(button: UIButton){
+    func buttonTapped(_ button: UIButton){
         
         //押されたボタンのタグを取得
         let page: Int = button.tag
@@ -263,59 +271,68 @@ class BaseViewController: UIViewController {
     }
 
     //使い方ガイドボタンを押した際のアクション
-    func onClickGuideButton(sender: UIBarButtonItem) {
+    func onClickSearchButton(_ sender: UIBarButtonItem) {
+        
+        //performSegue(withIdentifier: "", sender: nil)
+        
+        //TODO:値を渡す必要がある場合に記述をすること
+        print("ご意見・ご感想ページへ遷移すること")
+    }
 
-        performSegueWithIdentifier("guideContentsAction", sender: nil)
+    //使い方ガイドボタンを押した際のアクション
+    func onClickGuideButton(_ sender: UIBarButtonItem) {
+
+        performSegue(withIdentifier: "guideContentsAction", sender: nil)
         
         //TODO:値を渡す必要がある場合に記述をすること
         print("使い方ガイドページへ遷移すること")
     }
 
     //ボタン押下でコンテナをスライドさせる
-    func moveFormNowDisplayContentsScrollView(page: Int) {
+    func moveFormNowDisplayContentsScrollView(_ page: Int) {
         
-        UIView.animateWithDuration(0.16, delay: 0, options: [], animations: {
+        UIView.animate(withDuration: 0.16, delay: 0, options: [], animations: {
             
-            self.mainContentsScroll.contentOffset = CGPointMake(
-                CGFloat(Int(self.mainContentsScroll.frame.width) * page),
-                CGFloat(0)
+            self.mainContentsScroll.contentOffset = CGPoint(
+                x: CGFloat(Int(self.mainContentsScroll.frame.width) * page),
+                y: CGFloat(0)
             )
             
         }, completion: nil)
     }
     
     //ボタンタップ時に動くラベルをスライドさせる
-    func moveToCurrentButtonLabelButtonTapped(page: Int) {
+    func moveToCurrentButtonLabelButtonTapped(_ page: Int) {
         
-        UIView.animateWithDuration(0.16, delay: 0, options: [], animations: {
+        UIView.animate(withDuration: 0.16, delay: 0, options: [], animations: {
             
-            self.movingLabel.frame = CGRectMake(
-                CGFloat(Int(self.view.frame.width) / 3 * page),
-                CGFloat(SlideMenuSetting.movingLabelY),
-                CGFloat((Int(self.view.frame.width) / 3)),
-                CGFloat(SlideMenuSetting.movingLabelH)
+            self.movingLabel.frame = CGRect(
+                x: CGFloat(Int(self.view.frame.width) / 3 * page),
+                y: CGFloat(SlideMenuSetting.movingLabelY),
+                width: CGFloat((Int(self.view.frame.width) / 3)),
+                height: CGFloat(SlideMenuSetting.movingLabelH)
             )
             
         }, completion: nil)
     }
 
     //スクロール量に応じて動くラベルを一緒に動かす
-    func moveToCurrentButtonLabelContentsScrolled(page: Double) {
+    func moveToCurrentButtonLabelContentsScrolled(_ page: Double) {
         
-        UIView.animateWithDuration(0, delay: 0, options: [], animations: {
+        UIView.animate(withDuration: 0, delay: 0, options: [], animations: {
             
-            self.movingLabel.frame = CGRectMake(
-                CGFloat(Double(self.view.frame.width) / 3 * page),
-                CGFloat(SlideMenuSetting.movingLabelY),
-                CGFloat((Int(self.view.frame.width) / 3)),
-                CGFloat(SlideMenuSetting.movingLabelH)
+            self.movingLabel.frame = CGRect(
+                x: CGFloat(Double(self.view.frame.width) / 3 * page),
+                y: CGFloat(SlideMenuSetting.movingLabelY),
+                width: CGFloat((Int(self.view.frame.width) / 3)),
+                height: CGFloat(SlideMenuSetting.movingLabelH)
             )
             
         }, completion: nil)
     }
 
     //ボタンのスクロールビューをスライドさせる
-    func moveFormNowButtonContentsScrollView(page: Int) {
+    func moveFormNowButtonContentsScrollView(_ page: Int) {
         
         //Case1:ボタンを内包しているスクロールビューの位置変更をする
         if page > 0 && page < (ContentsSetting.pageNaviList.count - 1) {
@@ -333,10 +350,10 @@ class BaseViewController: UIViewController {
             scrollButtonOffsetX = Int(slideContentsScroll.frame.width)
         }
         
-        UIView.animateWithDuration(0.16, delay: 0, options: [], animations: {
-            self.slideContentsScroll.contentOffset = CGPointMake(
-                CGFloat(self.scrollButtonOffsetX),
-                CGFloat(0)
+        UIView.animate(withDuration: 0.16, delay: 0, options: [], animations: {
+            self.slideContentsScroll.contentOffset = CGPoint(
+                x: CGFloat(self.scrollButtonOffsetX),
+                y: CGFloat(0)
             )
         }, completion: nil)
         
@@ -355,9 +372,9 @@ extension BaseViewController: UINavigationControllerDelegate {
 extension BaseViewController: UIScrollViewDelegate {
     
     //スクロールが発生した際に行われる処理
-    func scrollViewDidScroll(scrollview: UIScrollView) {
+    func scrollViewDidScroll(_ scrollview: UIScrollView) {
         
-        if scrollview.tag == ScrollViewTag.Contents.rawValue {
+        if scrollview.tag == ScrollViewTag.contents.rawValue {
 
             //現在表示されているページ番号を判別する
             let pageWidth = mainContentsScroll.frame.width

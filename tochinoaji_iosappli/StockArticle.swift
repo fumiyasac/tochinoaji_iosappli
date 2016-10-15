@@ -7,6 +7,8 @@
 //
 
 import UIKit
+
+/*
 import RealmSwift
 
 //TODO: Realm内に保存しておく記事情報の定義をする
@@ -22,10 +24,10 @@ class StockArticle: Object {
     dynamic var title = ""
 
     //登録日
-    dynamic var createDate = NSDate(timeIntervalSince1970: 0)
+    dynamic var createDate = Date(timeIntervalSince1970: 0)
 
     //サムネイル写真
-    dynamic private var _image: UIImage? = nil
+    dynamic fileprivate var _image: UIImage? = nil
 
     dynamic var image: UIImage? {
 
@@ -50,7 +52,7 @@ class StockArticle: Object {
         }
     }
 
-    dynamic private var imageData: NSData? = nil
+    dynamic fileprivate var imageData: Data? = nil
 
     //PrimaryKeyの設定
     override static func primaryKey() -> String? {
@@ -104,3 +106,4 @@ class StockArticle: Object {
     */
 
 }
+*/

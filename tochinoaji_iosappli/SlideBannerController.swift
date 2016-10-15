@@ -20,10 +20,10 @@ class SlideBannerController: UIViewController {
     var bannerPageCounter = 0
 
     //バナーローテーション用のタイマー変数
-    var timer: NSTimer!
+    var timer: Timer!
     
     //レイアウト要素生成用のトークン値
-    private var bannerScrollToken: dispatch_once_t = 0
+    fileprivate var layoutOnceFlag: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,63 +31,62 @@ class SlideBannerController: UIViewController {
         bannerSlideScrollView.delegate = self
 
         //バナー画像のローテーション処理
-        timer = NSTimer.scheduledTimerWithTimeInterval(6.0, target: self, selector: #selector(SlideBannerController.bannerViewAnimate), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 6.0, target: self, selector: #selector(SlideBannerController.bannerViewAnimate), userInfo: nil, repeats: true)
     }
 
     override func viewDidLayoutSubviews() {
         
-        //動的に配置する見た目要素は一度だけ実行する
-        dispatch_once(&bannerScrollToken) { () -> Void in
-            
+        if layoutOnceFlag == false {
+        
             //コンテンツ用のScrollViewを初期化
             self.initBannerScrollViewDefinition()
             
-            self.bannerSlideScrollView.contentSize = CGSizeMake(
-                CGFloat(Int(self.bannerSlideScrollView.frame.width) * (self.bannerPageNumber + 1)),
-                CGFloat(Int(self.bannerSlideScrollView.frame.height))
+            bannerSlideScrollView.contentSize = CGSize(
+                width: CGFloat(Int(bannerSlideScrollView.frame.width) * (bannerPageNumber + 1)),
+                height: CGFloat(Int(bannerSlideScrollView.frame.height))
             )
             
             //UIImageViewを作成してScrollViewへ追加
-            for i in 0...self.bannerPageNumber {
+            for i in 0...bannerPageNumber {
                 
                 let bannerImageView: UIImageView! = UIImageView(
                     frame: CGRect(
-                        x: Int(self.bannerSlideScrollView.frame.width) * i,
+                        x: Int(bannerSlideScrollView.frame.width) * i,
                         y: 0,
-                        width: Int(self.bannerSlideScrollView.frame.width),
-                        height: Int(self.bannerSlideScrollView.frame.height)
+                        width: Int(bannerSlideScrollView.frame.width),
+                        height: Int(bannerSlideScrollView.frame.height)
                     )
                 )
                 
                 //FIXME:ローカルのJSONデータを取得して解析したものを入れる予定
                 switch (i) {
                 case 0:
-                    bannerImageView.backgroundColor = ColorConverter.colorWithHexString(ColorDefinition.Red.rawValue)
+                    bannerImageView.backgroundColor = ColorConverter.colorWithHexString(hex: ColorDefinition.Red.rawValue)
                     break
                 case 1:
-                    bannerImageView.backgroundColor = ColorConverter.colorWithHexString(ColorDefinition.Green.rawValue)
+                    bannerImageView.backgroundColor = ColorConverter.colorWithHexString(hex: ColorDefinition.Green.rawValue)
                     break
                 case 2:
-                    bannerImageView.backgroundColor = ColorConverter.colorWithHexString(ColorDefinition.Gray.rawValue)
+                    bannerImageView.backgroundColor = ColorConverter.colorWithHexString(hex: ColorDefinition.Gray.rawValue)
                     break
                 default:
-                    bannerImageView.backgroundColor = ColorConverter.colorWithHexString(ColorDefinition.Red.rawValue)
+                    bannerImageView.backgroundColor = ColorConverter.colorWithHexString(hex: ColorDefinition.Red.rawValue)
                     break
                 }
-                self.bannerSlideScrollView.addSubview(bannerImageView)
+                bannerSlideScrollView.addSubview(bannerImageView)
             }
-
+            layoutOnceFlag = true
         }
 
     }
     
     //バナー用のUIScrollViewの初期化を行う
-    private func initBannerScrollViewDefinition() {
+    fileprivate func initBannerScrollViewDefinition() {
         
         //ScrollViewの各種プロパティ値を設定する
-        bannerSlideScrollView.pagingEnabled = false
-        bannerSlideScrollView.scrollEnabled = false
-        bannerSlideScrollView.directionalLockEnabled = true
+        bannerSlideScrollView.isPagingEnabled = false
+        bannerSlideScrollView.isScrollEnabled = false
+        bannerSlideScrollView.isDirectionalLockEnabled = true
         bannerSlideScrollView.showsHorizontalScrollIndicator = false
         bannerSlideScrollView.showsVerticalScrollIndicator = true
         bannerSlideScrollView.bounces = true
@@ -99,12 +98,12 @@ class SlideBannerController: UIViewController {
 
         bannerPageCounter = (bannerPageCounter + 1) % (bannerPageNumber + 1)
 
-        UIView.animateWithDuration(0.6, delay: 0, options: [], animations: {
+        UIView.animate(withDuration: 0.6, delay: 0, options: [], animations: {
             self.bannerSlideScrollView.contentOffset.x = CGFloat(240 * self.bannerPageCounter)
         }, completion: nil)
     }
 
-    @IBAction func bannerButtonAction(sender: AnyObject) {
+    @IBAction func bannerButtonAction(_ sender: AnyObject) {
         print("Banner Number:\(self.bannerPageCounter) tapped!")
     }
     
@@ -117,7 +116,7 @@ class SlideBannerController: UIViewController {
 extension SlideBannerController: UIScrollViewDelegate {
 
     //スクロールが発生した際に行われる処理
-    func scrollViewDidScroll(scrollview: UIScrollView) {
+    func scrollViewDidScroll(_ scrollview: UIScrollView) {
         
         //現在表示されているページ番号を判別する
         let pageWidth = bannerSlideScrollView.frame.width

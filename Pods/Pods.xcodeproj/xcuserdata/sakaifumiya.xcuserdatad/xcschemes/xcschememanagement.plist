@@ -4,16 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Alamofire.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>HMSegmentedControl.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>NCMB.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -24,85 +14,15 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Realm.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>RealmSwift.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>SDWebImage.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>SVProgressHUD.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>SwiftTask.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>SwiftyJSON.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0A3EF36E31CF9A924FE5B33E2BB386D0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>1294713579D91F7979F9BA70F1536476</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>403C31C07300F1273024ECF43EFFF1ED</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>41B157979398A7275A532A0CDA42340D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6CF84C496FAD90B32E095259609BB528</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>71C1DF39EE1271EA1147F993CA1439A0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8B3A7937193774482394CB4E81AEC909</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>ADD68827273E35267923696DECDE8047</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C41DBB1C0BB7C1FC70C0C7D48973A551</key>
+		<key>C587D8815C4CE2858074689D4B763E4A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

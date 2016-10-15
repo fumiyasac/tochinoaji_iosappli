@@ -1,59 +1,22 @@
 PODS:
-  - Alamofire (3.4.1)
-  - HMSegmentedControl (1.5.2)
   - NCMB (2.3.3)
-  - Realm (1.0.1):
-    - Realm/Headers (= 1.0.1)
-  - Realm/Headers (1.0.1)
-  - RealmSwift (1.0.1):
-    - Realm (= 1.0.1)
-  - SDWebImage (3.8.1):
-    - SDWebImage/Core (= 3.8.1)
-  - SDWebImage/Core (3.8.1)
-  - SVProgressHUD (2.0.3)
-  - SwiftTask (5.0.0)
-  - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
-  - Alamofire (~> 3.0)
-  - HMSegmentedControl
-  - NCMB (from `https://github.com/NIFTYCloud-mbaas/ncmb_ios.git`)
-  - RealmSwift
-  - SDWebImage
-  - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
-  - SwiftTask
-  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
+  - NCMB (from `https://github.com/NIFTYCloud-mbaas/ncmb_ios.git`, branch `master`)
 
 EXTERNAL SOURCES:
   NCMB:
+    :branch: master
     :git: https://github.com/NIFTYCloud-mbaas/ncmb_ios.git
-  SVProgressHUD:
-    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
-  SwiftyJSON:
-    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 CHECKOUT OPTIONS:
   NCMB:
     :commit: cc06a5deb3636533dd7560087beac180c2d62012
     :git: https://github.com/NIFTYCloud-mbaas/ncmb_ios.git
-  SVProgressHUD:
-    :commit: 6ca5946638ed5bbf8ae36e3c3191901f76bf173b
-    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
-  SwiftyJSON:
-    :commit: 73670b94292b8d8496c398a973f56ac67789ba9f
-    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 SPEC CHECKSUMS:
-  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
-  HMSegmentedControl: 83b9686022d2176fb6457d2bdb61e5d6393fed7d
   NCMB: 33829337aeb2e91a0fc1c771eeb77b642f7f6589
-  Realm: 2e15e39d35b08abb529e212ed5d8af107b5236c8
-  RealmSwift: d73ea2af08c3676dbdd5e4b669651a0f492162a4
-  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
-  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
-  SwiftTask: 7fcd92f8ac16876e82c0e4ced0cea7e028456b6b
-  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: cd1eb44b3908c45a6f742faea159eff3ebe21e08
+PODFILE CHECKSUM: f59b501e29442fd9e8768a4261b2bc552d3b26fd
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.0.rc.2
